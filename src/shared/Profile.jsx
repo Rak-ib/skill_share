@@ -7,11 +7,25 @@ import { SlCamrecorder } from "react-icons/sl";
 import { MdOutlineFileCopy } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 
 const Profile = () => {
     //from Cntex API
-    const { user } = useContext(AuthContext);
+    const { user,logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleSignOut = () => {
+        logOut()
+            .then(res => {
+                console.log('Logout Successful', res)
+                navigate('/');
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
 
     return (
 
@@ -47,6 +61,9 @@ const Profile = () => {
                         </li>
                         <li >
                             <p className="text-xl"><span className="mr-2"><GiSkills /></span> Skillable</p>
+                        </li>
+                        <li  >
+                            <button className="btn-sm btn-warning"  onClick={handleSignOut}>LogOut <FaLongArrowAltRight /></button>
                         </li>
 
 
