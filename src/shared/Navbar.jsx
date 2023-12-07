@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from './../assets/Logo-new.png'
 import userpic from './../assets/user.png'
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -12,30 +12,24 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     console.log('My Name is ', user)
 
+   
 
-    const handleSignOut = () => {
-        logOut()
-            .then(res => {
-                console.log('Logout Successful', res)
-            })
-            .catch(error => {
-                console.error(error);
-            })
-    }
+
 
 
     const navItems = <>
 
-        <li ><NavLink className="hover:bg-slate-200 p-3  rounded-xl shadow-xl" to="/">Home</NavLink> </li>
-        <li ><NavLink className="hover:bg-slate-200 p-3  rounded-xl shadow-xl" to="/kkkk">About</NavLink> </li>
-        <li ><NavLink className="hover:bg-slate-200 p-3  rounded-xl shadow-xl" to="/">Course</NavLink> </li>
+        <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3 rounded-xl " to="/">Home</NavLink> </li>
+        <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3 rounded-xl " to="/kkkk">About</NavLink> </li>
+        <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3  rounded-xl " to="/">Course</NavLink> </li>
        
 
     </>
 
     return (
-        <div className="navbar bg-base-100 h-22 mb-1 p-4 rounded-xl font-bold ">
-            <div className="navbar-start">
+        <div className="navbar h-22 mb-1 p-4  bg-slate-100 rounded-xl font-bold  ">
+           <div className="max-w-[1370px] mx-auto navbar">
+           <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -68,16 +62,17 @@ const Navbar = () => {
                         </label>
                     </Link>
                 }
-                {user ?
-                    <button onClick={handleSignOut} className="btn btn-outline btn-warning">LogOut <FaLongArrowAltRight /></button>
-                    :
-                    <NavLink to='/login'> <button className="btn btn-outline btn-warning">Login <FaLongArrowAltRight /></button></NavLink>
+                {!user ? <NavLink to='/login'> <button className="btn btn-sm md:btn-md btn-warning">Login <FaLongArrowAltRight /></button></NavLink>:''
+                //    <button onClick={handleSignOut} className="btn btn-outline btn-warning">LogOut <FaLongArrowAltRight /></button>
+                //    :
                 }
 
 
 
 
             </div>
+
+           </div>
         </div>
     );
 };

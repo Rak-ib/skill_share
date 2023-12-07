@@ -5,6 +5,7 @@ import SignUp from "../authe/SignUp";
 import LogIn from "../authe/LogIn";
 import ErrorPage from "../shared/ErrorPage";
 import Profile from "../shared/Profile";
+import CourseDetails from "../page/course/CourseDetails";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
         {
           path:'/profile',
           element:<Profile></Profile>
+        },
+        {
+          path:'/course/:course_id',
+          element:<CourseDetails ></CourseDetails>,
+          loader: ({params})=>fetch('AllCourses.json')
         }
       ]
     },
