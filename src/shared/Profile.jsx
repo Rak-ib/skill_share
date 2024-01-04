@@ -7,8 +7,13 @@ import { SlCamrecorder } from "react-icons/sl";
 import { MdOutlineFileCopy } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { FaLongArrowAltRight } from "react-icons/fa";
+<<<<<<< HEAD
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdLogOut } from "react-icons/io";
+=======
+import { useNavigate } from "react-router-dom";
+
+>>>>>>> 82e12edb1185c839ef47bc89a7c0479f290c588c
 
 const Profile = () => {
     //from Cntex API
@@ -61,6 +66,9 @@ const Profile = () => {
                         </li>
                         <li >
                             <p className="text-xl"><span className="mr-2"><GiSkills /></span> Skillable</p>
+                        </li>
+                        <li  >
+                            <button className="btn-sm btn-warning"  onClick={handleSignOut}>LogOut <FaLongArrowAltRight /></button>
                         </li>
 
                         <li className="border-t-2  mt-64 ">

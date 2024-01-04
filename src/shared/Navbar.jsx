@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Link, NavLink} from "react-router-dom";
+=======
+import { Link, NavLink, useNavigate } from "react-router-dom";
+>>>>>>> 82e12edb1185c839ef47bc89a7c0479f290c588c
 import logo from './../assets/Logo-new.png'
 import userpic from './../assets/user.png'
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -11,6 +15,7 @@ const Navbar = () => {
 
     //from Cntex API
 
+<<<<<<< HEAD
     //const { user} = useContext(AuthContext);
     //console.log('My Name is ', user)
 
@@ -18,13 +23,24 @@ const Navbar = () => {
      const auth=UseAuth();
      const {user}=auth;
     
+=======
+   
+
+
+
+>>>>>>> 82e12edb1185c839ef47bc89a7c0479f290c588c
 
     const navItems = <>
 
         <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3 rounded-xl " to="/">Home</NavLink> </li>
+<<<<<<< HEAD
         <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3 rounded-xl " to="/dashboard">About</NavLink> </li>
         <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3  rounded-xl " to="/">Course</NavLink> </li>
         <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3  rounded-xl " to="/demo">Demo</NavLink> </li>
+=======
+        <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3 rounded-xl " to="/kkkk">About</NavLink> </li>
+        <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3  rounded-xl " to="/">Course</NavLink> </li>
+>>>>>>> 82e12edb1185c839ef47bc89a7c0479f290c588c
        
 
     </>

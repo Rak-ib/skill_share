@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@tanstack/react-query": "^5.12.2",
     "aos": "^2.3.4",
     "axios": "^1.6.2",
+=======
+    "aos": "^2.3.4",
+>>>>>>> 82e12edb1185c839ef47bc89a7c0479f290c588c
     "firebase": "^10.7.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
