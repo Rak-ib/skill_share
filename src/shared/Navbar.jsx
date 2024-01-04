@@ -1,27 +1,30 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import logo from './../assets/Logo-new.png'
 import userpic from './../assets/user.png'
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
+// import { useContext } from "react";
+// import { AuthContext } from "../provider/AuthProvider";
+import UseAuth from "../hooks/UseAuth";
 
 
 const Navbar = () => {
 
     //from Cntex API
-    const { user, logOut } = useContext(AuthContext);
-    console.log('My Name is ', user)
 
-   
+    //const { user} = useContext(AuthContext);
+    //console.log('My Name is ', user)
 
-
-
+    //From Custom Hook
+     const auth=UseAuth();
+     const {user}=auth;
+    
 
     const navItems = <>
 
         <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3 rounded-xl " to="/">Home</NavLink> </li>
-        <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3 rounded-xl " to="/kkkk">About</NavLink> </li>
+        <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3 rounded-xl " to="/dashboard">About</NavLink> </li>
         <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3  rounded-xl " to="/">Course</NavLink> </li>
+        <li className="mr-2" ><NavLink className="hover:bg-slate-300 p-3  rounded-xl " to="/demo">Demo</NavLink> </li>
        
 
     </>
@@ -50,7 +53,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <p className="mr-2 font-thin">
                     {
-                        //user && <span className="mr-2  text-green-600 font-bold">{user.displayName}</span>
+                        user && <span className="mr-2  text-green-600 font-bold">{user.displayName}</span>
                     }
                 </p>
                 {user &&

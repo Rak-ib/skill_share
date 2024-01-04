@@ -3,6 +3,7 @@ import img from './../assets/login/login.svg'
 import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
+//import USeAxioseSecure from '../hooks/USeAxioseSecure';
 
 
 const LogIn = () => {
@@ -11,6 +12,7 @@ const LogIn = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+    //const axiosSecure=USeAxioseSecure()
     // // Error show
     const [regerror, setRegerror] = useState('')
 
@@ -21,8 +23,46 @@ const LogIn = () => {
         const password = form.password.value;
         console.log(email, password)
 
-        //   //resetError
-          setRegerror('');
+        //const products={email,password}
+//->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-//
+          //send data to server side 'post'
+        //   fetch('http://localhost:5000/users', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(products)    //-> object user
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         if (data.insertedId) {
+        //             alert(' Added12121212')
+        //             // //SweetAlert
+        //             // Swal.fire({
+        //             //   title: 'Success!',
+        //             //   text: 'Added Successfully',
+        //             //   icon: 'success',
+        //             //   confirmButtonText: 'Cool'
+        //             // })
+        //             //form.reset();
+        //         }
+        //     })
+//->>>>>>>>>>>>>>>>>>>> OR >>>>>>>>>>>>>>>>>>>>>>>>>>-//
+        //  axiosSecure.post('/users',products)
+        //  .then(res=>{
+        //     console.log(res.data)
+        //     if(res.data.insertedId){
+        //         alert('added12322222');
+        //     }
+            
+        //  })
+
+
+//->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-//
+
+        //resetError
+        setRegerror('');
 
         signIn(email, password)
             .then(result => {

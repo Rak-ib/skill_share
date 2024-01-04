@@ -7,8 +7,8 @@ import { SlCamrecorder } from "react-icons/sl";
 import { MdOutlineFileCopy } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { IoMdLogOut } from "react-icons/io";
 
 const Profile = () => {
     //from Cntex API
@@ -29,7 +29,7 @@ const Profile = () => {
 
     return (
 
-        <div className="flex flex-col lg:flex-row gap-12 mt-2">
+        <div className="flex flex-col lg:flex-row gap-12 mt-6">
             <div className="drawer lg:drawer-open  w-1/4  ">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
@@ -62,15 +62,10 @@ const Profile = () => {
                         <li >
                             <p className="text-xl"><span className="mr-2"><GiSkills /></span> Skillable</p>
                         </li>
-                        <li  >
-                            <button className="btn-sm btn-warning"  onClick={handleSignOut}>LogOut <FaLongArrowAltRight /></button>
-                        </li>
-
 
                         <li className="border-t-2  mt-64 ">
                             <div>
-                                <img className="h-[30px] mr-2" src={userpic} alt="" />
-                                <p className=" font-semibold text-xl">Profile</p>
+                                <button className="btn  text-xl btn-warning" onClick={handleSignOut}>LogOut <IoMdLogOut /></button>
                             </div>
                         </li>
 
@@ -84,7 +79,9 @@ const Profile = () => {
                 <div className="flex flex-col w-full border-opacity-50">
                      <div className="flex justify-between items-center">
                         <p className="text-2xl font-semibold">Profile</p>
-                        <button className="btn bg-base-300">User Dashboard <FaLongArrowAltRight /></button>
+                        <Link to='/dashboard'>
+                           <button className="btn  text-xl bg-base-100">Dashboard <FaLongArrowAltRight /></button>
+                        </Link>
                      </div>
 
                     <div className="divider">&&</div>
